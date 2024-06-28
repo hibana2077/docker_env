@@ -2,7 +2,7 @@
 
 # 更新包列表並安裝 OpenSSH 服務器
 apt-get update
-apt-get install -y openssh-server
+apt-get install -y openssh-server curl git vim neofetch
 
 # 創建 mluser 用戶並設置密碼
 useradd -m -s /bin/bash mluser
