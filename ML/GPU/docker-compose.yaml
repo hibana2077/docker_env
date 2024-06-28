@@ -1,5 +1,6 @@
 services:
   gpu:
+    container_name: ml_gpu
     image: pytorch/pytorch:2.1.0-cuda12.1-cudnn8-runtime
     command: bash /tool/start.sh
     ports:
