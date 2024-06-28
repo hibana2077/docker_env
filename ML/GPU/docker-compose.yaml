@@ -1,7 +1,23 @@
 services:
   gpu:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: pytorch/pytorch:2.1.0-cuda12.1-cudnn8-runtime
+    command: bash /tool/start.sh
+    ports:
+      - "2222:22"
     runtime: nvidia
-    
+    volumes:
+      - ./tool:/tool
+    deploy:
+      resources:
+        limits:
+          cpus: 8
+          memory: 32G
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    healthcheck:
+      test: ["nvidia-smi", "--query-gpu=memory.used", "--format=csv,noheader,nounits"]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
