@@ -13,7 +13,7 @@ services:
           devices:
             - capabilities: [gpu]
     healthcheck:
-      test: ["nvidia-smi", "--query-gpu=memory.used", "--format=csv,noheader,nounits"]
+      test: ["CMD","nvidia-smi", "--query-gpu=memory.used", "--format=csv,noheader,nounits"]
       interval: 1m30s
       timeout: 30s
       retries: 5
