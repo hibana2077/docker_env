@@ -10,4 +10,7 @@ This repository contains multiple docker-compose files to create a development e
 
 - [x] Machine Learning - GPU
 - [x] Machine Learning - CPU
-- [ ] Web Development
+- [x] Web Development
+- [ ] Data Science
+- [ ] Programming Languages - Go
+- [ ] Programming Languages - Rust
