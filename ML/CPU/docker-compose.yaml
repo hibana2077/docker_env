@@ -1,0 +1,21 @@
+services:
+  cpu:
+    container_name: ml_cpu
+    image: ubuntu:22.04
+    command: bash /tool/start.sh
+    ports:
+      - "2222:22"
+    volumes:
+      - ./tool:/tool
+      # if you need to attach a volume, you can add it here
+    deploy:
+      resources:
+        limits:
+          cpus: '8'
+          memory: 16G
+    healthcheck:
+      test: ["CMD","bash","-c","echo 1"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
