@@ -9,9 +9,6 @@ services:
       - ./tool:/tool
     deploy:
       resources:
-        limits:
-          cpus: 8
-          memory: 32G
         reservations:
           devices:
             - capabilities: [gpu]
