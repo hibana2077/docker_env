@@ -1,0 +1,7 @@
+services:
+  gpu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    runtime: nvidia
+    
