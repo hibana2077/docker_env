@@ -15,5 +15,11 @@ sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/' /etc/ssh/sshd_c
 # 啟動 SSH 服務
 service ssh start
 
+apt-get install -y python3 python3-pip
+
+pip3 install --upgrade pip
+
+pip3 install -r /tool/requirements.txt
+
 # 保持容器運行
 tail -f /dev/null
