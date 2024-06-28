@@ -1,6 +1,8 @@
 FROM pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
 
-RUN apt update && apt install -y vim curl wget git openssh-server
+RUN apt update
+
+RUN apt install -y vim curl wget git openssh-server
 
 RUN service ssh start
 
